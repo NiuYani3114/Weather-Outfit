@@ -7,6 +7,7 @@
     "pages/colors/colors",
     "pages/settings/settings"
   ],
+<<<<<<< HEAD
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#a9b7f3",
@@ -57,4 +58,17 @@
     }
   },
   "sitemapLocation": "sitemap.json"
+=======
+  "tabBar": {
+    "list": [
+      { "pagePath": "pages/index/index", "text": "今日", "iconPath": "assets/home.png", "selectedIconPath": "assets/home-active.png" },
+      { "pagePath": "pages/outfits/outfits", "text": "搭配", "iconPath": "assets/outfit.png", "selectedIconPath": "assets/outfit-active.png" },
+      { "pagePath": "pages/favorites/favorites", "text": "收藏", "iconPath": "assets/heart.png", "selectedIconPath": "assets/heart-active.png" },
+      { "pagePath": "pages/settings/settings", "text": "我的", "iconPath": "assets/user.png", "selectedIconPath": "assets/user-active.png" }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": { "desc": "获取位置以提供当地天气和穿搭建议" }
+  }
+>>>>>>> 768edf670c5cc78a155d26f7c93a04828c943b12
 }
