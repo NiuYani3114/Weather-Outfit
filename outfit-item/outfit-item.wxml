@@ -1,0 +1,16 @@
+<view class="outfit-item" bindtap="onTap" hover-class="outfit-item--hover" hover-stay-time="80">
+  <!-- 图标容器 -->
+  <view class="item-icon-box" style="background: {{bgColor}};">
+    <view class="item-icon-glow"></view>
+    <text class="item-emoji">{{icon}}</text>
+  </view>
+
+  <!-- 名称 -->
+  <text class="item-name">{{name}}</text>
+
+  <!-- 保暖胶囊 -->
+  <view wx:if="{{warmthText}}" class="item-warmth">
+    <text class="warmth-dot"></text>
+    <text>{{warmthText}}</text>
+  </view>
+</view>
