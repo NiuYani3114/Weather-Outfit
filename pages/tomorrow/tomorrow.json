@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "明日穿搭",
+  "navigationBarBackgroundColor": "#1a1a1a",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "outfit-item": "/components/outfit-item/outfit-item"
+  }
+}

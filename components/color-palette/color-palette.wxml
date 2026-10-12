@@ -1,0 +1,28 @@
+<view class="palette-container">
+  <!-- 顶部：配色名称 + 主题标签 -->
+  <view class="palette-header">
+    <text class="palette-name">{{name}}</text>
+    <text class="palette-theme" wx:if="{{theme}}">{{theme}}</text>
+  </view>
+
+  <!-- 中间：色块展示 -->
+  <view class="palette-colors">
+    <!-- 循环渲染颜色数组 -->
+    <view 
+      class="color-block" 
+      wx:for="{{colors}}" 
+      wx:key="*this"
+      style="background-color: {{item}};"
+    ></view>
+    
+    <!-- 如果还没传颜色进来，显示占位 -->
+    <view class="empty-color" wx:if="{{colors.length === 0}}">
+      暂无配色
+    </view>
+  </view>
+
+  <!-- 底部：描述 -->
+  <view class="palette-desc" wx:if="{{desc}}">
+    {{desc}}
+  </view>
+</view>

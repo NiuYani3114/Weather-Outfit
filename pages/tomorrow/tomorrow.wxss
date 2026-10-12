@@ -1,0 +1,295 @@
+/* ================= 页面容器 ================= */
+.page-container {
+  padding: 20px 16px 40px 16px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* 页面顶部极细分割线，区分标题栏和内容 */
+.page-container::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--divider-color);
+}
+
+/* ================= 1. 天气卡片 ================= */
+.weather-card {
+  border-radius: 20px;
+  padding: 20px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.weather-sunny  { background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%); }
+.weather-rainy  { background: linear-gradient(135deg, #4A5568 0%, #2D3748 100%); }
+.weather-cloudy { background: linear-gradient(135deg, #4A90E2 0%, #2C3E50 100%); }
+
+.weather-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sun {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  animation: sunPulse 4s infinite alternate;
+}
+
+@keyframes sunPulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+  background-size: 10px 40px;
+  animation: rainFall 0.8s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes rainFall {
+  0% { background-position: 0 0; }
+  100% { background-position: 10px 40px; }
+}
+
+.cloud-group {
+  position: absolute;
+  top: 30px;
+  left: -150px;
+  width: 120px;
+  height: 50px;
+  animation: cloudMove 20s linear infinite;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+}
+
+.cloud-1 { width: 80px; height: 80px; top: -20px; left: 20px; }
+.cloud-2 { width: 60px; height: 60px; top: 0; left: 0; }
+.cloud-3 { width: 70px; height: 70px; top: -10px; left: 50px; }
+
+@keyframes cloudMove {
+  0% { left: -150px; }
+  100% { left: 100%; }
+}
+
+.weather-sunny .rain, .weather-sunny .cloud-group { display: none; }
+.weather-rainy .sun, .weather-rainy .cloud-group { display: none; }
+.weather-cloudy .sun, .weather-cloudy .rain { display: none; }
+
+.weather-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weather-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.weather-middle {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.temp {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.weather-text {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.weather-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.tip {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* ================= 2. 未来几天预览区 ================= */
+.forecast-scroll {
+  width: 100%;
+  white-space: nowrap;
+  margin-bottom: 24px;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.forecast-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 12px 16px;
+  width: 72px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+
+.forecast-date {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.forecast-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.forecast-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.forecast-temp {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ================= 3. 穿搭推荐 ================= */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 8px;
+}
+
+.section-subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.outfit-scroll {
+  width: 100%;
+  white-space: nowrap;
+  margin-bottom: 24px;
+}
+
+.outfit-list {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+
+.outfit-item-wrapper {
+  display: inline-block;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  display: inline-block;
+  padding: 20px 40px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ================= 4. 色彩搭配 ================= */
+.color-inspiration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: background 0.3s ease;
+}
+
+.inspiration-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.inspiration-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.inspiration-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.inspiration-colors {
+  display: flex;
+  gap: 8px;
+}
+
+.color-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

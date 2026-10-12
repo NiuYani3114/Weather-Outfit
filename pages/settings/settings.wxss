@@ -1,0 +1,136 @@
+/* ========== 1. 定义主题变量 ========== */
+/* 默认（夜间模式） */
+page {
+  --bg-color: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --border-color: #2a2a2a;
+}
+
+/* 日间模式（通过动态类名 .light-mode 覆盖变量） */
+.page-container.light-mode {
+  --bg-color: #f6f7f9;
+  --card-bg: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --border-color: #eeeeee;
+}
+
+/* ========== 2. 使用变量应用样式 ========== */
+.page-container {
+  min-height: 100vh;
+  padding: 20px 16px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.setting-row:last-of-type {
+  border-bottom: none;
+}
+
+.row-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.row-value {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.row-right {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.row-tip {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.switch-label {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+switch {
+  transform: scale(0.8);
+}
+
+.danger-zone {
+  margin-top: 30px;
+}
+
+.danger-btn {
+  background-color: transparent;
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 14px 0;
+  margin-bottom: 12px;
+}
+
+.danger-btn::after {
+  border: none;
+}
+
+.danger-tip {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.footer-sign {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
