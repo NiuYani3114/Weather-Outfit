@@ -1,0 +1,90 @@
+<view class="page-container {{isLightMode ? 'light-mode' : ''}}">
+  <!-- 1. 动态天气卡片 -->
+  <view class="weather-card weather-{{weatherType}}">
+    <view class="weather-bg">
+      <view class="sun"></view>
+      <view class="rain"></view>
+      <view class="cloud-group">
+        <view class="cloud cloud-1"></view>
+        <view class="cloud cloud-2"></view>
+        <view class="cloud cloud-3"></view>
+      </view>
+    </view>
+    
+    <view class="weather-content">
+      <view class="weather-top">
+        <text class="date">明天 · {{forecastDate}}</text>
+        <text class="city">北京</text>
+      </view>
+      
+      <view class="weather-middle">
+        <text class="temp">{{tomorrowTemp}}°</text>
+        <text class="weather-text">{{tomorrowText}}</text>
+      </view>
+      
+      <view class="weather-bottom">
+        <text class="temp-range">12° ~ 22°</text>
+        <text class="tip">{{tempDiffTip}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 2. 未来几天预览 -->
+  <view class="section-header">
+    <text class="section-title">未来几天</text>
+    <text class="section-subtitle">左右滑动查看 →</text>
+  </view>
+  
+  <scroll-view class="forecast-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="forecast-list">
+      <view class="forecast-item" wx:for="{{forecastList}}" wx:key="date">
+        <text class="forecast-date">{{item.date}}</text>
+        <text class="forecast-icon">{{item.icon}}</text>
+        <text class="forecast-text">{{item.text}}</text>
+        <text class="forecast-temp">{{item.temp}}°</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 3. 穿搭推荐 -->
+  <view class="section-header">
+    <text class="section-title">明日穿搭推荐</text>
+    <text class="section-subtitle">左右滑动查看 →</text>
+  </view>
+  
+  <scroll-view class="outfit-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="outfit-list">
+      <view class="outfit-item-wrapper" wx:for="{{items}}" wx:key="name">
+        <outfit-item 
+          icon="{{item.icon}}" 
+          name="{{item.name}}" 
+          bgColor="{{item.bgColor}}" 
+          warmth="{{item.warmth}}" 
+          type="{{item.type}}" 
+        />
+      </view>
+      <view class="empty-state" wx:if="{{items.length === 0}}">
+        <text class="empty-icon">👗</text>
+        <text class="empty-text">暂无推荐，请先去首页获取</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 4. 色彩搭配 -->
+  <view class="section-header">
+    <text class="section-title">明日色彩灵感</text>
+  </view>
+  
+  <view class="color-inspiration">
+    <view class="inspiration-left">
+      <text class="inspiration-name">初秋暖阳</text>
+      <text class="inspiration-desc">适合气温 15-20度</text>
+    </view>
+    <view class="inspiration-colors">
+      <view class="color-dot" style="background-color: #FFD700;"></view>
+      <view class="color-dot" style="background-color: #FF8C00;"></view>
+      <view class="color-dot" style="background-color: #FF6347;"></view>
+      <view class="color-dot" style="background-color: #8B4513;"></view>
+    </view>
+  </view>
+</view>

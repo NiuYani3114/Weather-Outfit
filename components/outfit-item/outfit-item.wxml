@@ -1,0 +1,4 @@
+<view class="item-card" style="background-color: {{bgColor}};" bindtap="onTap">
+  <text class="item-icon">{{icon}}</text>
+  <text class="item-name">{{name}}</text>
+</view>

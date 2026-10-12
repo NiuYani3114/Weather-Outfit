@@ -1,0 +1,48 @@
+<view class="page-container {{isLightMode ? 'light-mode' : ''}}">
+  
+  <view class="card">
+    <view class="card-title">个人设置</view>
+    
+    <view class="setting-row" bindtap="onChangeGender">
+      <view class="row-left">
+        <text class="row-label">性别</text>
+        <text class="row-value">{{genderText}}</text>
+      </view>
+      <view class="row-right">
+        <text class="arrow">▾</text>
+      </view>
+    </view>
+
+    <view class="setting-row" bindtap="onChangeBodyType">
+      <view class="row-left">
+        <text class="row-label">体质</text>
+        <text class="row-value">{{bodyTypeText}}</text>
+      </view>
+      <view class="row-right">
+        <text class="arrow">▾</text>
+      </view>
+    </view>
+    
+    <view class="row-tip">体质会影响穿搭引擎的厚度推荐</view>
+  </view>
+
+  <view class="card">
+    <view class="switch-row">
+      <text class="switch-label">记录穿搭历史</text>
+      <switch checked="{{recordHistory}}" color="{{isLightMode ? '#000000' : '#ffffff'}}" bindchange="onRecordHistoryChange"/>
+    </view>
+    
+    <view class="switch-row">
+      <text class="switch-label">日间模式</text>
+      <switch checked="{{isLightMode}}" color="{{isLightMode ? '#000000' : '#ffffff'}}" bindchange="onToggleTheme"/>
+    </view>
+  </view>
+
+  <view class="danger-zone">
+    <button class="danger-btn" bindtap="onClearData">清空收藏与历史数据</button>
+    <view class="danger-tip">点击后需二次确认，操作不可恢复</view>
+  </view>
+
+  <view class="footer-sign">我的页面 · 负责：成员4</view>
+
+</view>
