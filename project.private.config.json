@@ -23,11 +23,18 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/settings/settings",
-          "pathName": "pages/settings/settings",
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "pages/settings/settings",
+          "pathName": "pages/settings/settings",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "pages/tomorrow/tomorrow",

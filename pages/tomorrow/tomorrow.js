@@ -27,13 +27,11 @@ Page({
     this.setData({ isLightMode: isLight });
     
     if (isLight) {
-      // 日间模式：白底黑字
       wx.setNavigationBarColor({
         frontColor: '#000000',
         backgroundColor: '#ffffff'
       });
     } else {
-      // 夜间模式：标题栏比页面底色略深，有层次感
       wx.setNavigationBarColor({
         frontColor: '#ffffff',
         backgroundColor: '#151921'

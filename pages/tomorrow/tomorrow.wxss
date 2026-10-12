@@ -7,7 +7,6 @@
   transition: all 0.3s ease;
 }
 
-/* 页面顶部极细分割线，区分标题栏和内容 */
 .page-container::before {
   content: '';
   display: block;

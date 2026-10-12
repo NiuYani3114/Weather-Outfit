@@ -1,10 +1,8 @@
 <view class="page-container {{isLightMode ? 'light-mode' : ''}}">
   
-  <!-- 1. 个人设置卡片 -->
   <view class="card">
     <view class="card-title">个人设置</view>
     
-    <!-- 性别选择 -->
     <view class="setting-row" bindtap="onChangeGender">
       <view class="row-left">
         <text class="row-label">性别</text>
@@ -15,7 +13,6 @@
       </view>
     </view>
 
-    <!-- 体质选择 -->
     <view class="setting-row" bindtap="onChangeBodyType">
       <view class="row-left">
         <text class="row-label">体质</text>
@@ -26,32 +23,26 @@
       </view>
     </view>
     
-    <!-- 底部提示文字 -->
     <view class="row-tip">体质会影响穿搭引擎的厚度推荐</view>
   </view>
 
-  <!-- 2. 功能开关卡片 -->
   <view class="card">
     <view class="switch-row">
       <text class="switch-label">记录穿搭历史</text>
-      <!-- 颜色改为动态绑定：日间模式用黑色，夜间模式用白色 -->
       <switch checked="{{recordHistory}}" color="{{isLightMode ? '#000000' : '#ffffff'}}" bindchange="onRecordHistoryChange"/>
     </view>
     
-    <!-- 日间模式开关 -->
     <view class="switch-row">
       <text class="switch-label">日间模式</text>
       <switch checked="{{isLightMode}}" color="{{isLightMode ? '#000000' : '#ffffff'}}" bindchange="onToggleTheme"/>
     </view>
   </view>
 
-  <!-- 3. 危险操作区 -->
   <view class="danger-zone">
     <button class="danger-btn" bindtap="onClearData">清空收藏与历史数据</button>
     <view class="danger-tip">点击后需二次确认，操作不可恢复</view>
   </view>
 
-  <!-- 页面底部署名 -->
   <view class="footer-sign">我的页面 · 负责：成员4</view>
 
 </view>
