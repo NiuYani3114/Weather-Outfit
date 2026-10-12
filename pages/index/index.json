@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "weather-card": "/components/weather-card/weather-card"
+  },
+  "navigationBarTitleText": "天气穿搭",
+  "enablePullDownRefresh": true
+}

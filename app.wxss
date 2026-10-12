@@ -1,0 +1,8 @@
+page {
+  background: #f5f7fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+view, text {
+  box-sizing: border-box;
+}

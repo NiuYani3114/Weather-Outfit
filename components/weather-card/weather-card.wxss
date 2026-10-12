@@ -1,0 +1,74 @@
+.weather-card {
+  position: relative;
+  color: #fff;
+  border-radius: 32rpx;
+  overflow: hidden;
+  margin: 0 24rpx;
+  background: #93B5C6;
+  box-shadow: 0 8rpx 30rpx rgba(147, 181, 198, 0.4);
+  transition: all 0.3s ease;
+}
+
+.weather-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* 夜间遮罩层 */
+.dark-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  padding: 60rpx 40rpx 120rpx 40rpx;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+
+.temp {
+  font-size: 140rpx;
+  font-weight: 200;
+  line-height: 1.1;
+  margin-top: 20rpx;
+}
+
+.desc {
+  font-size: 32rpx;
+  opacity: 0.95;
+  margin-top: -10rpx;
+}
+
+.icon {
+  position: absolute;
+  right: 40rpx;
+  top: 100rpx;
+  font-size: 120rpx;
+}
+
+.warning {
+  margin-top: 30rpx;
+  padding: 20rpx 30rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20rpx;
+  font-size: 26rpx;
+}

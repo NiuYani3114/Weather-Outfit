@@ -1,0 +1,231 @@
+/* ========== 主题变量（夜间默认） ========== */
+page {
+  --bg-color: #1c2029;
+  --card-bg: #2a2f3a;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --border: #3a3f4a;
+
+  --primary: #8396eb;
+  --primary-dark: #7982dc;
+  --secondary: #9064bc;
+  --warning: #f5a623;
+  --danger: #ff6b6b;
+  --success: #52c41a;
+
+  --radius-sm: 8rpx;
+  --radius-md: 16rpx;
+  --radius-lg: 24rpx;
+  --radius-xl: 32rpx;
+
+  --space-xs: 8rpx;
+  --space-sm: 16rpx;
+  --space-md: 24rpx;
+  --space-lg: 32rpx;
+
+  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.12);
+
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+/* ========== 白天模式变量覆盖 ========== */
+.page-container.light-mode {
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #666666;
+  --border: #e8e8e8;
+}
+
+/* ========== 页面基础 ========== */
+.page-container {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* ========== 今日穿搭区 ========== */
+.outfit-card {
+  position: relative;
+  z-index: 3;
+  margin: -80rpx 24rpx 0 24rpx;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 40rpx 30rpx;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.outfit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.outfit-title {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.gender-switch {
+  display: flex;
+  gap: 10rpx;
+  background-color: var(--bg-color);
+  border-radius: 30rpx;
+  padding: 6rpx;
+}
+
+.gender-btn {
+  padding: 10rpx 28rpx;
+  border-radius: 24rpx;
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.gender-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.outfit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+/* ========== 临时单品卡片（等成员2组件好了删掉） ========== */
+.outfit-item-card {
+  width: calc(20% - 13rpx);
+  padding: 24rpx 10rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.outfit-icon {
+  font-size: 56rpx;
+  margin-bottom: 10rpx;
+}
+
+.outfit-name {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+}
+
+.tag-row {
+  display: flex;
+  gap: 16rpx;
+  margin: 20rpx 0;
+}
+
+.tag {
+  padding: 8rpx 20rpx;
+  border-radius: 24rpx;
+  font-size: 22rpx;
+}
+
+.tag-blue { background: #e8eaf6; color: #5c6bc0; }
+.tag-green { background: #e0f2f1; color: #00897b; }
+.tag-orange { background: #fff3e0; color: #f57c00; }
+
+.action-row {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 20rpx;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx;
+  border-radius: var(--radius-md);
+  font-size: 28rpx;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2rpx solid var(--border);
+  color: var(--text-secondary);
+}
+
+.btn-outline.active {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ========== 明日穿搭预览 ========== */
+.tomorrow-card {
+  margin: 24rpx 24rpx 0 24rpx;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 36rpx 30rpx;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.tomorrow-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.tomorrow-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.tomorrow-weather {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.tomorrow-body {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.tomorrow-icon {
+  font-size: 60rpx;
+}
+
+.tomorrow-tip {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ========== 设置入口 ========== */
+.settings-entry {
+  margin: 24rpx 24rpx 0 24rpx;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 32rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
