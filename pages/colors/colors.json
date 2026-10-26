@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "色彩搭配",
+  "usingComponents": {
+    "color-palette": "/components/color-palette/color-palette"
+  }
+}

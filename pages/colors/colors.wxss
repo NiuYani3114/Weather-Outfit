@@ -1,0 +1,81 @@
+.page-container {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  /* 核心修复：顶部留出安全距离，防止文字被遮挡 */
+  padding: 40rpx 24rpx 60rpx 24rpx; 
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.page-title {
+  font-size: 44rpx;
+  font-weight: 800;
+  margin-bottom: 12rpx; /* 减小下边距，避免挨太近 */
+  color: var(--text-primary);
+  letter-spacing: 2rpx;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column; /* 标题和副标题上下排，更优雅 */
+  margin-bottom: 24rpx;
+  margin-top: 20rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8rpx;
+}
+
+.section-subtitle {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+}
+
+/* 底部入口卡片的美化 */
+.library-entry-card {
+  background: var(--card-bg);
+  border-radius: 32rpx;
+  padding: 40rpx 32rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.04);
+}
+
+.entry-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 12rpx;
+}
+
+.entry-desc {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.entry-right {
+  display: flex;
+}
+
+.dot {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  margin-left: -20rpx;
+  border: 6rpx solid var(--card-bg);
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.05);
+  z-index: 1;
+}
+.dot:nth-child(2) { z-index: 2; }
+.dot:nth-child(3) { z-index: 3; }

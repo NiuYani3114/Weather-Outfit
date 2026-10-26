@@ -1,0 +1,33 @@
+<view class="page-container {{isLightMode ? 'light-mode' : ''}}">
+  <view class="page-title">色彩搭配</view>
+  
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">今日穿搭色彩</text>
+    </view>
+    
+    <view class="recommend-list">
+      <color-palette 
+        wx:for="{{recommend}}" 
+        wx:key="name"
+        name="{{item.name}}"
+        theme="{{item.theme}}"
+        colors="{{item.colors}}"
+        desc="{{item.desc}}"
+      />
+    </view>
+  </view>
+
+  <!-- 跳转灵感色彩库的入口卡片 -->
+  <view class="library-entry-card" bindtap="goToLibrary">
+    <view class="entry-left">
+      <text class="entry-title">灵感色彩库</text>
+      <text class="entry-desc">探索更多神仙配色 →</text>
+    </view>
+    <view class="entry-right">
+      <view class="dot" style="background-color: #A1C1A1;"></view>
+      <view class="dot" style="background-color: #D2C4B2;"></view>
+      <view class="dot" style="background-color: #F28695;"></view>
+    </view>
+  </view>
+</view>

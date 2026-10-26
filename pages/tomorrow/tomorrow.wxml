@@ -1,0 +1,78 @@
+<view class="page-container {{isLightMode ? 'light-mode' : ''}}">
+
+<!-- 1. 顶部天气区（只改了这一行 dateText） -->
+<weather-card
+  city="{{city}}"
+  temp="{{tomorrowTemp}}"
+  feelTemp="{{tomorrowTemp}}"
+  weather="{{tomorrowText}}"
+  icon="{{weatherIcon}}"
+  dateText="{{realDateText}}"
+  warning="{{tempDiffTip}}"
+  isLightMode="{{isLightMode}}"
+/>
+
+<!-- 2. 今日穿搭区 -->
+<view class="outfit-card">
+  <view class="outfit-header">
+    <view class="outfit-title">明日穿搭推荐</view>
+    <text class="section-subtitle">左右滑动查看 →</text>
+  </view>
+
+  <scroll-view scroll-x="true" show-scrollbar="false" class="outfit-scroll">
+    <view class="outfit-list">
+      <view class="outfit-item-wrapper" wx:for="{{items}}" wx:key="name">
+        <outfit-item 
+          icon="{{item.icon}}" 
+          name="{{item.name}}" 
+          bgColor="{{item.bgColor}}" 
+          warmth="{{item.warmth}}" 
+          type="{{item.type}}" 
+        />
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 显示配色标签 -->
+  <view class="tag-row" wx:if="{{recommendColor}}">
+    <view class="tag tag-blue">{{recommendColor.name}}</view>
+    <view class="tag tag-green">{{recommendColor.theme}}</view>
+  </view>
+</view>
+
+<!-- 3. 未来5天预览 -->
+<view class="tomorrow-card" style="margin-top: 24rpx;">
+  <view class="tomorrow-header">
+    <view class="tomorrow-title">未来5天天气</view>
+    <text class="section-subtitle">左右滑动查看 →</text>
+  </view>
+  
+  <scroll-view scroll-x="true" show-scrollbar="false" class="forecast-scroll">
+    <view class="forecast-list">
+      <view class="forecast-item" wx:for="{{forecastList}}" wx:key="date">
+        <text class="forecast-date">{{item.date}}</text>
+        <text class="forecast-icon">{{item.icon}}</text>
+        <text class="forecast-text">{{item.text}}</text>
+        <text class="forecast-temp">{{item.tempMin}}°~{{item.tempMax}}°</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 4. 色彩搭配 -->
+<view class="tomorrow-card" style="margin-top: 24rpx;" wx:if="{{recommendColor}}">
+  <view class="tomorrow-header">
+    <view class="tomorrow-title">明日色彩灵感</view>
+  </view>
+  <view class="color-inspiration">
+    <view class="inspiration-left">
+      <text class="inspiration-name">{{recommendColor.name}}</text>
+      <text class="inspiration-desc">{{recommendColor.desc}}</text>
+    </view>
+    <view class="inspiration-colors">
+      <view class="color-dot" wx:for="{{recommendColor.colors}}" wx:key="*this" style="background-color: {{item}};"></view>
+    </view>
+  </view>
+</view>
+
+</view>

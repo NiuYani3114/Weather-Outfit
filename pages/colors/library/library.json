@@ -1,6 +1,6 @@
 {
+  "navigationBarTitleText": "灵感色彩库",
   "usingComponents": {
     "color-palette": "/components/color-palette/color-palette"
-  },
-  "navigationBarTitleText": "色彩搭配"
+  }
 }

@@ -1,0 +1,29 @@
+<view class="weather-card {{isLightMode ? '' : 'weather-card-dark'}}">
+  <canvas type="2d" id="weather-canvas" class="weather-canvas"></canvas>
+
+  <!-- 夜间遮罩层 -->
+  <view class="dark-mask" wx:if="{{!isLightMode}}"></view>
+
+  <view class="content">
+    <view class="top">
+      <view class="location">📍 {{city}}</view>
+      <view class="date">{{dateText}}</view>
+    </view>
+
+    <!-- 大温度与区间并排 -->
+    <view class="temp-row">
+      <view class="temp">{{temp}}°</view>
+      <!-- 只要有最高温，就直接显示 -->
+      <view class="temp-range" wx:if="{{tempMax}}">
+        {{tempMin}}° / {{tempMax}}°
+      </view>
+    </view>
+
+    <view class="desc">{{weather}} · 体感{{feelTemp}}°</view>
+    <view class="icon">{{icon}}</view>
+
+    <view class="warning" wx:if="{{warning}}">
+      ⚠️ {{warning}}
+    </view>
+  </view>
+</view>

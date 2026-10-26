@@ -1,0 +1,27 @@
+.page-container {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 40rpx 24rpx 60rpx 24rpx; /* 顶部留出安全距离 */
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.page-title {
+  font-size: 44rpx;
+  font-weight: 800;
+  margin-bottom: 12rpx;
+  color: var(--text-primary);
+  letter-spacing: 2rpx;
+}
+
+.page-subtitle {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  margin-bottom: 40rpx;
+}
+
+.all-list {
+  display: flex;
+  flex-direction: column;
+}

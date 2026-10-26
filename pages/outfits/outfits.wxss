@@ -1,9 +1,10 @@
-/* 多套搭配样式 - 成员5 */
+/* 多套搭配样式 - 成员5（保留前面日夜模式，合并后面功能） */
 .page-container {
-  background-color: var(--bg-color);
-  color: var(--text-primary);
+  background-color: var(--bg) !important; /* 强制接管背景 */
   min-height: 100vh;
-  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24rpx 40rpx 24rpx;
 }
 
 .page-title {
@@ -16,7 +17,7 @@
 .temp-badge {
   font-size: 24rpx;
   color: var(--primary);
-  background: #e8eaf6;
+  background: var(--tag-blue-bg);
   padding: 4rpx 16rpx;
   border-radius: 16rpx;
   margin-left: 12rpx;
@@ -41,7 +42,7 @@
 }
 
 .filter-item.active {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #ffffff;
 }
 
@@ -74,7 +75,7 @@
 .outfit-temp {
   font-size: 24rpx;
   color: var(--primary);
-  background: #e8eaf6;
+  background: var(--tag-blue-bg);
   padding: 4rpx 16rpx;
   border-radius: 16rpx;
 }
@@ -105,7 +106,7 @@
 .color-tag {
   font-size: 22rpx;
   color: var(--text-secondary);
-  background: var(--card-bg);
+  background: var(--bg);
   padding: 4rpx 16rpx;
   border-radius: 12rpx;
 }
