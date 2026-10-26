@@ -41,29 +41,83 @@ const STYLE_FIX_COLOR_NAME = {
     '简约': '大地色系',
     '休闲': '大地色系'
 };
-// ==================== 穿搭数据库（已补齐男女每个温度区间所有styles对应的styleOutfits方案） ====================
+// ==================== 穿搭数据库（9 个温度区间 × 4 风格，男女共 72 套） ====================
 const OUTFIT_DB = {
     female: {
-        '0_5': {
-            // 休闲:韩系 | 正式:通勤 | 运动:户外 | 其他:简约 四大类齐全
+        'below_neg10': {
+            // ≤ -10℃：严寒，保暖等级全部拉满，配件补耳罩/面罩/手套
             styles: ['韩系', '通勤', '户外', '简约'],
             items: [
-                { type: 'top', name: '保暖内衣', icon: '🧶', warmth: 5 },
-                { type: 'top', name: '厚毛衣', icon: '🧶', warmth: 5 },
-                { type: 'bottom', name: '加绒裤', icon: '👖', warmth: 5 },
-                { type: 'outer', name: '羽绒服', icon: '🧥', warmth: 5 },
-                { type: 'shoes', name: '雪地靴', icon: '🥾', warmth: 5 },
-                { type: 'accessory', name: '围巾手套', icon: '🧣', warmth: 4 }
+                { type: 'top', name: '加厚保暖内衣', icon: '🧶', warmth: 5 },
+                { type: 'top', name: '高领加厚毛衣', icon: '🧶', warmth: 5 },
+                { type: 'bottom', name: '加绒加厚打底裤', icon: '👖', warmth: 5 },
+                { type: 'outer', name: '长款加厚羽绒服', icon: '🧥', warmth: 5 },
+                { type: 'shoes', name: '防滑雪地靴', icon: '🥾', warmth: 5 },
+                { type: 'accessory', name: '耳罩围巾手套', icon: '🧣', warmth: 5 }
+            ],
+            styleOutfits: {
+                '韩系': {
+                    items: [
+                        { type: 'top', name: '加厚德绒打底', icon: '👕', warmth: 5 },
+                        { type: 'top', name: '高领加厚毛衣', icon: '🧶', warmth: 5 },
+                        { type: 'bottom', name: '加绒加厚打底裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款加厚羽绒服', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '防滑雪地靴', icon: '🥾', warmth: 5 },
+                        { type: 'accessory', name: '耳罩围巾手套', icon: '🧣', warmth: 5 }
+                    ]
+                },
+                '通勤': {
+                    items: [
+                        { type: 'top', name: '加厚德绒高领', icon: '👕', warmth: 5 },
+                        { type: 'top', name: '加厚羊毛毛衣', icon: '🧶', warmth: 5 },
+                        { type: 'bottom', name: '加绒加厚西裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款过膝羽绒大衣', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '加绒防滑皮靴', icon: '👢', warmth: 5 },
+                        { type: 'accessory', name: '羊毛围巾手套', icon: '🧣', warmth: 5 }
+                    ]
+                },
+                '户外': {
+                    items: [
+                        { type: 'top', name: '速热加厚打底', icon: '👕', warmth: 5 },
+                        { type: 'top', name: '抓绒加厚卫衣', icon: '👕', warmth: 5 },
+                        { type: 'bottom', name: '加绒防水冲锋裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款加厚羽绒冲锋衣', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '高帮防滑雪地靴', icon: '🥾', warmth: 5 },
+                        { type: 'accessory', name: '防寒帽面罩', icon: '🧢', warmth: 5 }
+                    ]
+                },
+                '简约': {
+                    items: [
+                        { type: 'top', name: '加厚纯棉保暖内衣', icon: '🧶', warmth: 5 },
+                        { type: 'top', name: '纯色加厚毛衣', icon: '🧶', warmth: 5 },
+                        { type: 'bottom', name: '加绒加厚直筒裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款黑色羽绒服', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '防滑雪地靴', icon: '🥾', warmth: 5 },
+                        { type: 'accessory', name: '纯色羊毛围巾手套', icon: '🧣', warmth: 5 }
+                    ]
+                }
+            }
+        },
+        'neg10_0': {
+            // -10 ~ 0℃：零下，厚款 + 防滑鞋底
+            styles: ['韩系', '通勤', '户外', '简约'],
+            items: [
+                { type: 'top', name: '德绒打底衫', icon: '👕', warmth: 4 },
+                { type: 'top', name: '宽松厚毛衣', icon: '🧶', warmth: 4 },
+                { type: 'bottom', name: '加绒半身长裙', icon: '👗', warmth: 4 },
+                { type: 'outer', name: '中长款羽绒服', icon: '🧥', warmth: 5 },
+                { type: 'shoes', name: '毛毛防滑短靴', icon: '👢', warmth: 4 },
+                { type: 'accessory', name: '针织贝雷帽围巾', icon: '🎩', warmth: 4 }
             ],
             styleOutfits: {
                 '韩系': {
                     items: [
                         { type: 'top', name: '德绒打底衫', icon: '👕', warmth: 4 },
-                        { type: 'top', name: '宽松毛衣', icon: '🧶', warmth: 4 },
+                        { type: 'top', name: '宽松厚毛衣', icon: '🧶', warmth: 4 },
                         { type: 'bottom', name: '加绒半身长裙', icon: '👗', warmth: 4 },
-                        { type: 'outer', name: '短款羽绒服', icon: '🧥', warmth: 5 },
-                        { type: 'shoes', name: '毛毛短靴', icon: '👢', warmth: 4 },
-                        { type: 'accessory', name: '针织贝雷帽', icon: '🎩', warmth: 3 }
+                        { type: 'outer', name: '中长款羽绒服', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '毛毛防滑短靴', icon: '👢', warmth: 4 },
+                        { type: 'accessory', name: '针织贝雷帽围巾', icon: '🎩', warmth: 4 }
                     ]
                 },
                 '通勤': {
@@ -73,7 +127,7 @@ const OUTFIT_DB = {
                         { type: 'bottom', name: '加厚西装直筒裤', icon: '👖', warmth: 4 },
                         { type: 'outer', name: '长款过膝羊毛大衣', icon: '🧥', warmth: 5 },
                         { type: 'shoes', name: '加绒通勤皮靴', icon: '👢', warmth: 4 },
-                        { type: 'accessory', name: '细款羊毛围巾', icon: '🧣', warmth: 3 }
+                        { type: 'accessory', name: '细款羊毛围巾', icon: '🧣', warmth: 4 }
                     ]
                 },
                 '户外': {
@@ -91,12 +145,65 @@ const OUTFIT_DB = {
                         { type: 'top', name: '纯棉保暖内衣', icon: '🧶', warmth: 4 },
                         { type: 'top', name: '纯色基础毛衣', icon: '🧶', warmth: 4 },
                         { type: 'bottom', name: '加绒直筒裤', icon: '👖', warmth: 4 },
-                        { type: 'outer', name: '哑光羽绒服', icon: '🧥', warmth: 5 },
+                        { type: 'outer', name: '长款哑光羽绒服', icon: '🧥', warmth: 5 },
                         { type: 'shoes', name: '简约雪地靴', icon: '🥾', warmth: 4 },
-                        { type: 'accessory', name: '纯色羊毛围巾', icon: '🧣', warmth: 3 }
+                        { type: 'accessory', name: '纯色羊毛围巾', icon: '🧣', warmth: 4 }
                     ]
                 }
             }
+        },
+        '0_5': {
+    styles: ['韩系', '通勤', '户外', '简约'],
+    items: [
+        { type: 'top', name: '加绒打底衫', icon: '👕', warmth: 3 },
+        { type: 'top', name: '针织毛衣', icon: '🧶', warmth: 3 },
+        { type: 'bottom', name: '加绒直筒裤', icon: '👖', warmth: 3 },
+        { type: 'outer', name: '中长款棉服', icon: '🧥', warmth: 4 },
+        { type: 'shoes', name: '加绒短靴', icon: '👢', warmth: 3 },
+        { type: 'accessory', name: '针织围巾', icon: '🧣', warmth: 2 }
+    ],
+    styleOutfits: {
+        '韩系': {
+            items: [
+                { type: 'top', name: '加绒打底衫', icon: '👕', warmth: 3 },
+                { type: 'top', name: '宽松针织毛衣', icon: '🧶', warmth: 3 },
+                { type: 'bottom', name: '加绒半身长裙', icon: '👗', warmth: 3 },
+                { type: 'outer', name: '中长款棉服', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '加绒短靴', icon: '👢', warmth: 3 },
+                { type: 'accessory', name: '针织围巾', icon: '🧣', warmth: 2 }
+            ]
+        },
+        '通勤': {
+            items: [
+                { type: 'top', name: '德绒打底衫', icon: '👕', warmth: 3 },
+                { type: 'top', name: '修身针织衫', icon: '🧶', warmth: 3 },
+                { type: 'bottom', name: '加绒西装裤', icon: '👖', warmth: 3 },
+                { type: 'outer', name: '中长款羊毛大衣', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '通勤短靴', icon: '👢', warmth: 3 },
+                { type: 'accessory', name: '细羊毛围巾', icon: '🧣', warmth: 2 }
+            ]
+        },
+        '户外': {
+            items: [
+                { type: 'top', name: '速干保暖打底', icon: '👕', warmth: 3 },
+                { type: 'top', name: '抓绒卫衣', icon: '👕', warmth: 3 },
+                { type: 'bottom', name: '加绒休闲裤', icon: '👖', warmth: 3 },
+                { type: 'outer', name: '薄款防风冲锋衣', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '低帮徒步鞋', icon: '🥾', warmth: 3 },
+                { type: 'accessory', name: '运动棒球帽', icon: '🧢', warmth: 1 }
+            ]
+        },
+        '简约': {
+            items: [
+                { type: 'top', name: '纯棉打底衫', icon: '👕', warmth: 3 },
+                { type: 'top', name: '纯色基础毛衣', icon: '🧶', warmth: 3 },
+                { type: 'bottom', name: '加绒直筒裤', icon: '👖', warmth: 3 },
+                { type: 'outer', name: '中长款棉服', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '简约加绒短靴', icon: '👢', warmth: 3 },
+                { type: 'accessory', name: '纯色围巾', icon: '🧣', warmth: 2 }
+            ]
+        }
+    }
         },
         '5_10': {
             // 休闲:文艺 | 正式:通勤 | 运动:街头 | 其他:甜酷
@@ -421,16 +528,68 @@ const OUTFIT_DB = {
         }
     },
     male: {
-        '0_5': {
-            // 休闲:日系 | 正式:商务 | 运动:户外 | 其他:简约
+        'below_neg10': {
             styles: ['日系', '商务', '户外', '简约'],
             items: [
-                { type: 'top', name: '保暖内衣', icon: '🧶', warmth: 5 },
-                { type: 'top', name: '毛衣', icon: '🧶', warmth: 4 },
-                { type: 'bottom', name: '加绒裤', icon: '👖', warmth: 5 },
-                { type: 'outer', name: '羽绒服', icon: '🧥', warmth: 5 },
-                { type: 'shoes', name: '马丁靴', icon: '🥾', warmth: 4 },
-                { type: 'accessory', name: '围巾', icon: '🧣', warmth: 3 }
+                { type: 'top', name: '加厚保暖内衣', icon: '🧶', warmth: 5 },
+                { type: 'top', name: '高领加厚毛衣', icon: '🧶', warmth: 5 },
+                { type: 'bottom', name: '加绒加厚裤', icon: '👖', warmth: 5 },
+                { type: 'outer', name: '长款加厚羽绒服', icon: '🧥', warmth: 5 },
+                { type: 'shoes', name: '防滑雪地靴', icon: '🥾', warmth: 5 },
+                { type: 'accessory', name: '围巾手套', icon: '🧣', warmth: 5 }
+            ],
+            styleOutfits: {
+                '日系': {
+                    items: [
+                        { type: 'top', name: '加厚德绒圆领打底', icon: '👕', warmth: 5 },
+                        { type: 'top', name: '加厚落肩毛衣', icon: '🧶', warmth: 5 },
+                        { type: 'bottom', name: '加绒加厚工装裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款加厚羽绒服', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '加绒防滑板鞋', icon: '👟', warmth: 5 },
+                        { type: 'accessory', name: '加厚针织冷帽手套', icon: '🧢', warmth: 5 }
+                    ]
+                },
+                '商务': {
+                    items: [
+                        { type: 'top', name: '加厚德绒打底', icon: '👕', warmth: 5 },
+                        { type: 'top', name: '高领加厚羊毛毛衣', icon: '🧶', warmth: 5 },
+                        { type: 'bottom', name: '加厚西裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款过膝羊毛大衣', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '加绒商务皮鞋', icon: '👞', warmth: 5 },
+                        { type: 'accessory', name: '羊毛围巾手套', icon: '🧣', warmth: 5 }
+                    ]
+                },
+                '户外': {
+                    items: [
+                        { type: 'top', name: '速热加厚打底', icon: '👕', warmth: 5 },
+                        { type: 'top', name: '抓绒加厚卫衣', icon: '👕', warmth: 5 },
+                        { type: 'bottom', name: '加绒防水冲锋裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款加厚羽绒冲锋衣', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '高帮防滑雪地靴', icon: '🥾', warmth: 5 },
+                        { type: 'accessory', name: '防寒帽面罩', icon: '🧢', warmth: 5 }
+                    ]
+                },
+                '简约': {
+                    items: [
+                        { type: 'top', name: '加厚纯棉保暖内衣', icon: '🧶', warmth: 5 },
+                        { type: 'top', name: '纯色加厚毛衣', icon: '🧶', warmth: 5 },
+                        { type: 'bottom', name: '加绒加厚直筒裤', icon: '👖', warmth: 5 },
+                        { type: 'outer', name: '长款黑色羽绒服', icon: '🧥', warmth: 5 },
+                        { type: 'shoes', name: '加绒防滑皮鞋', icon: '👞', warmth: 5 },
+                        { type: 'accessory', name: '纯色羊毛围巾手套', icon: '🧣', warmth: 5 }
+                    ]
+                }
+            }
+        },
+        'neg10_0': {
+            styles: ['日系', '商务', '户外', '简约'],
+            items: [
+                { type: 'top', name: '德绒圆领打底', icon: '👕', warmth: 4 },
+                { type: 'top', name: '宽松落肩毛衣', icon: '🧶', warmth: 4 },
+                { type: 'bottom', name: '加绒阔腿工装裤', icon: '👖', warmth: 4 },
+                { type: 'outer', name: '宽松廓形羽绒服', icon: '🧥', warmth: 5 },
+                { type: 'shoes', name: '加绒工装板鞋', icon: '👟', warmth: 4 },
+                { type: 'accessory', name: '纯色针织冷帽', icon: '🧢', warmth: 4 }
             ],
             styleOutfits: {
                 '日系': {
@@ -440,7 +599,7 @@ const OUTFIT_DB = {
                         { type: 'bottom', name: '加绒阔腿工装裤', icon: '👖', warmth: 4 },
                         { type: 'outer', name: '宽松廓形羽绒服', icon: '🧥', warmth: 5 },
                         { type: 'shoes', name: '加绒工装板鞋', icon: '👟', warmth: 4 },
-                        { type: 'accessory', name: '纯色针织冷帽', icon: '🧢', warmth: 3 }
+                        { type: 'accessory', name: '纯色针织冷帽', icon: '🧢', warmth: 4 }
                     ]
                 },
                 '商务': {
@@ -450,7 +609,7 @@ const OUTFIT_DB = {
                         { type: 'bottom', name: '加厚西裤', icon: '👖', warmth: 4 },
                         { type: 'outer', name: '长款羊毛大衣', icon: '🧥', warmth: 5 },
                         { type: 'shoes', name: '加绒商务皮鞋', icon: '👞', warmth: 4 },
-                        { type: 'accessory', name: '羊毛围巾', icon: '🧣', warmth: 3 }
+                        { type: 'accessory', name: '羊毛围巾', icon: '🧣', warmth: 4 }
                     ]
                 },
                 '户外': {
@@ -470,11 +629,64 @@ const OUTFIT_DB = {
                         { type: 'bottom', name: '加绒直筒裤', icon: '👖', warmth: 4 },
                         { type: 'outer', name: '黑色基础羽绒服', icon: '🧥', warmth: 5 },
                         { type: 'shoes', name: '简约加绒皮鞋', icon: '👞', warmth: 4 },
-                        { type: 'accessory', name: '纯色围巾', icon: '🧣', warmth: 3 }
+                        { type: 'accessory', name: '纯色围巾', icon: '🧣', warmth: 4 }
                     ]
                 }
             }
         },
+        '0_5': {
+    styles: ['日系', '商务', '户外', '简约'],
+    items: [
+        { type: 'top', name: '德绒圆领打底', icon: '👕', warmth: 3 },
+        { type: 'top', name: '宽松针织毛衣', icon: '🧶', warmth: 3 },
+        { type: 'bottom', name: '加绒工装裤', icon: '👖', warmth: 3 },
+        { type: 'outer', name: '中长款棉服', icon: '🧥', warmth: 4 },
+        { type: 'shoes', name: '加绒板鞋', icon: '👟', warmth: 3 },
+        { type: 'accessory', name: '针织冷帽', icon: '🧢', warmth: 2 }
+    ],
+    styleOutfits: {
+        '日系': {
+            items: [
+                { type: 'top', name: '德绒圆领打底', icon: '👕', warmth: 3 },
+                { type: 'top', name: '宽松针织毛衣', icon: '🧶', warmth: 3 },
+                { type: 'bottom', name: '加绒工装裤', icon: '👖', warmth: 3 },
+                { type: 'outer', name: '中长款棉服', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '加绒板鞋', icon: '👟', warmth: 3 },
+                { type: 'accessory', name: '针织冷帽', icon: '🧢', warmth: 2 }
+            ]
+        },
+        '商务': {
+            items: [
+                { type: 'top', name: '德绒打底衫', icon: '👕', warmth: 3 },
+                { type: 'top', name: '高领针织毛衣', icon: '🧶', warmth: 3 },
+                { type: 'bottom', name: '加厚西裤', icon: '👖', warmth: 3 },
+                { type: 'outer', name: '中长款羊毛大衣', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '加绒商务皮鞋', icon: '👞', warmth: 3 },
+                { type: 'accessory', name: '羊毛围巾', icon: '🧣', warmth: 2 }
+            ]
+        },
+        '户外': {
+            items: [
+                { type: 'top', name: '速热保暖打底', icon: '👕', warmth: 4 },
+                { type: 'top', name: '抓绒卫衣', icon: '👕', warmth: 3 },
+                { type: 'bottom', name: '加绒冲锋裤', icon: '👖', warmth: 4 },
+                { type: 'outer', name: '薄款冲锋衣', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '低帮户外靴', icon: '🥾', warmth: 4 },
+                { type: 'accessory', name: '防寒冷帽', icon: '🧢', warmth: 3 }
+            ]
+        },
+        '简约': {
+            items: [
+                { type: 'top', name: '纯棉打底衫', icon: '👕', warmth: 3 },
+                { type: 'top', name: '纯色基础毛衣', icon: '🧶', warmth: 3 },
+                { type: 'bottom', name: '加绒直筒裤', icon: '👖', warmth: 3 },
+                { type: 'outer', name: '中长款棉服', icon: '🧥', warmth: 4 },
+                { type: 'shoes', name: '简约加绒皮鞋', icon: '👞', warmth: 3 },
+                { type: 'accessory', name: '纯色围巾', icon: '🧣', warmth: 2 }
+            ]
+        }
+    }
+},
         '5_10': {
             // 休闲:休闲 | 正式:轻熟 | 运动:街头 | 其他:简约
             styles: ['休闲', '轻熟', '街头', '简约'],
@@ -940,8 +1152,8 @@ const outfitEngine = {
         if (temp > 28) {
             // 极其炎热时，去掉看着厚重的深色系
             seasonPool = seasonPool.filter(c => c.theme !== '美拉德风' && c.theme !== '浓郁费尔岛');
-        } else if (temp < 5) {
-            // 极其寒冷时，去掉看着清冷的色系
+        } else if (temp < 0) {
+            // 零下时，去掉看着清冷的色系
             seasonPool = seasonPool.filter(c => c.name !== '薄荷曼波' && c.name !== '芦汀初雪');
         }
 
@@ -953,6 +1165,8 @@ const outfitEngine = {
         return COLOR_PALETTES;
     },
     _matchTempRange(temp) {
+        if (temp <= -10) return 'below_neg10';
+        if (temp <= 0) return 'neg10_0';
         if (temp <= 5) return '0_5';
         if (temp <= 10) return '5_10';
         if (temp <= 15) return '10_15';
@@ -963,7 +1177,9 @@ const outfitEngine = {
     },
     _generateWarnings(temp) {
         const warnings = [];
-        if (temp < 5) warnings.push({ type: 'cold', level: 'danger', message: '极寒天气，注意防寒保暖' });
+        if (temp <= -10) warnings.push({ type: 'cold', level: 'danger', message: '严寒天气，尽量减少外出，注意防冻防滑' });
+        else if (temp <= 0) warnings.push({ type: 'cold', level: 'danger', message: '零下天气，注意防寒防滑' });
+        else if (temp < 5) warnings.push({ type: 'cold', level: 'danger', message: '极寒天气，注意防寒保暖' });
         else if (temp < 10) warnings.push({ type: 'cold', level: 'warning', message: '气温较低，注意保暖' });
         if (temp > 35) warnings.push({ type: 'hot', level: 'danger', message: '高温预警，避免户外活动' });
         else if (temp > 30) warnings.push({ type: 'hot', level: 'warning', message: '天气炎热，注意防晒补水' });
