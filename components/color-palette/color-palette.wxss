@@ -1,0 +1,55 @@
+.ins-palette-card {
+  background: var(--card-bg);
+  border-radius: 32rpx; /* 圆角增大，变得软糯 */
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.04); /* 换上更柔和的高级阴影 */
+  transition: all 0.3s ease;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.palette-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 1rpx;
+}
+
+.theme-tag {
+  font-size: 22rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  font-weight: 500;
+}
+
+.circle-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20rpx 0 28rpx 10rpx;
+}
+
+.color-circle {
+  width: 90rpx; 
+  height: 90rpx;
+  border-radius: 50%;
+  border: 6rpx solid var(--card-bg); /* 描边加粗，让重叠层次更清晰 */
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+/* 底部的灰色小框 */
+.palette-desc {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  background: var(--bg); /* 使用背景色作为底色，形成区分 */
+  padding: 16rpx 20rpx;  /* 增加内边距 */
+  border-radius: 16rpx;  /* 圆角 */
+  margin-top: 10rpx;
+}

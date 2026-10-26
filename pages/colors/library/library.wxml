@@ -1,0 +1,14 @@
+<view class="page-container {{isLightMode ? 'light-mode' : ''}}">
+  <view class="page-title">灵感色彩库</view>
+  
+  <view class="all-list">
+    <color-palette 
+      wx:for="{{allPalettes}}" 
+      wx:key="name"
+      name="{{item.name}}"
+      theme="{{item.theme}}"
+      colors="{{item.colors}}"
+      desc="{{item.desc}}"
+    />
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="ins-palette-card">
+  <view class="card-header">
+    <text class="palette-title">{{name}}</text>
+    <view class="theme-tag" style="color: {{colors[0]}}; background: {{colors[0]}}15;">{{theme}}</view>
+  </view>
+
+  <!-- 缩小并重叠的圆环 -->
+  <view class="circle-group">
+    <view class="color-circle" 
+          wx:for="{{colors}}" 
+          wx:key="*this" 
+          style="background-color: {{item}}; margin-left: {{index === 0 ? '0' : '-20rpx'}}; z-index: {{4 - index}};">
+    </view>
+  </view>
+
+  <!-- 推荐理由或描述 -->
+  <view class="palette-desc">{{desc}}</view>
+</view>

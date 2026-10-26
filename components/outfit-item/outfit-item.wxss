@@ -1,0 +1,83 @@
+/* ===== 卡片整体 ===== */
+.outfit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32rpx 24rpx;
+  border-radius: 32rpx;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.outfit-item--hover {
+  transform: scale(0.94);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* ===== 图标容器 ===== */
+.item-icon-box {
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14rpx;
+  overflow: hidden;
+  box-shadow:
+    0 8rpx 20rpx rgba(0, 0, 0, 0.08),
+    inset 0 2rpx 4rpx rgba(255, 255, 255, 0.6);
+}
+
+/* 内层高光，让图标有"晶莹感" */
+.item-icon-glow {
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.item-emoji {
+  position: relative;
+  font-size: 70rpx;
+  line-height: 1;
+  filter: drop-shadow(0 4rpx 6rpx rgba(0, 0, 0, 0.12));
+}
+
+/* ===== 名称 ===== */
+.item-name {
+  font-size: 25rpx;
+  font-weight: 500;
+  color: var(--text-secondary, #4a4a4a);
+  text-align: center;
+  max-width: 150rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.5rpx;
+}
+
+/* ===== 保暖胶囊 ===== */
+.item-warmth {
+  display: inline-flex;
+  align-items: center;
+  gap: 6rpx;
+  margin-top: 8rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  font-size: 20rpx;
+  color: #555658;
+  background: linear-gradient(135deg, #fcf1fb 0%, #f0d4ea 100%);
+  box-shadow: 0 2rpx 6rpx rgba(255, 170, 100, 0.18);
+}
+
+/* 小圆点装饰 */
+.warmth-dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #fcb94c;
+}

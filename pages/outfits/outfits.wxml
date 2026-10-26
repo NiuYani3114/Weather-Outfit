@@ -1,0 +1,49 @@
+<view class="page-container {{isLightMode ? 'light-mode' : ''}}">
+  <view class="page-title">多套搭配参考
+     <text class="temp-badge">{{currentTemp}}°</text>
+  </view>
+
+  <!-- 风格筛选 -->
+  <view class="filter-bar">
+    <view class="filter-item {{currentFilter === 'all' ? 'active' : ''}}"
+          bindtap="filter" data-filter="all">全部</view>
+    <view class="filter-item {{currentFilter === '休闲' ? 'active' : ''}}"
+          bindtap="filter" data-filter="休闲">休闲</view>
+    <view class="filter-item {{currentFilter === '正式' ? 'active' : ''}}"
+          bindtap="filter" data-filter="正式">正式</view>
+    <view class="filter-item {{currentFilter === '运动' ? 'active' : ''}}"
+          bindtap="filter" data-filter="运动">运动</view>
+    <view class="filter-item {{currentFilter === '其他' ? 'active' : ''}}"
+          bindtap="filter" data-filter="其他">其他</view>
+  </view>
+
+  <!-- 搭配列表 -->
+  <view class="outfit-list">
+    <view class="outfit-card-item"
+          wx:for="{{filteredOutfits}}"
+          wx:key="id"
+          wx:for-index="outfitIdx"
+          bindtap="selectOutfit"
+          data-index="{{outfitIdx}}">
+      <view class="outfit-header">
+        <text class="outfit-style">{{item.style}}</text>
+        <text class="outfit-temp">{{item.temp}}°推荐</text>
+      </view>
+      <view class="outfit-items-row">
+        <view class="mini-item" wx:for="{{item.items}}" wx:for-item="item2" wx:key="type">
+          <text class="mini-icon">{{item2.icon}}</text>
+          <text class="mini-name">{{item2.name}}</text>
+        </view>
+      </view>
+      <view class="outfit-colors">
+        <text class="color-tag">{{item.colors}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{filteredOutfits.length === 0}}" class="empty-state">
+    <text class="empty-icon">👗</text>
+    <text>暂无该风格搭配</text>
+  </view>
+</view>

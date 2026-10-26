@@ -1,0 +1,102 @@
+<view class="page-container {{isLightMode ? 'light-mode' : ''}}">
+
+<!-- 顶部天气区（外层加 relative 定位） -->
+<view style="position: relative;">
+  <weather-card
+    city="{{city}}"
+    temp="{{currentTemp}}"
+    feelTemp="{{feelTemp}}"
+    weather="{{weatherText}}"
+    icon="{{weatherIcon}}"
+    dateText="{{dateText}}"
+    warning="{{warningText}}"
+    isLightMode="{{isLightMode}}"
+  />
+  
+  <!-- 🚨 暴力外挂：直接盖在卡片上的温度区间 🚨 -->
+  <view wx:if="{{todayTempMax !== undefined && todayTempMax !== null}}" style="position: absolute; left: 210rpx; top: 180rpx; font-size: 34rpx; color: #ffffff; opacity: 0.9; font-weight: 500; z-index: 10; letter-spacing: 2rpx;">
+    {{todayTempMin}}° / {{todayTempMax}}°
+  </view>
+</view>
+
+<!-- 今日穿搭区 -->
+<view class="outfit-card">
+  <view class="outfit-header">
+    <view class="outfit-title">今日穿搭</view>
+  </view>
+
+  <view class="outfit-list">
+    <outfit-item
+      wx:for="{{outfitItems}}"
+      wx:key="id"
+      icon="{{item.icon}}"
+      name="{{item.name}}"
+      bgColor="{{item.bgColor}}"
+      warmth="{{item.warmth}}"
+      type="{{item.type}}"
+      bindtap="onItemTap"
+    />
+  </view>
+
+  <view class="tag-row" wx:if="{{styleTags.length > 0}}">
+    <view
+      class="tag {{index === 0 ? 'tag-blue' : index === 1 ? 'tag-green' : 'tag-orange'}}"
+      wx:for="{{styleTags}}"
+      wx:key="*this"
+    >{{item}}</view>
+  </view>
+
+  <view class="action-row">
+    <view
+      class="btn btn-outline {{isFav ? 'active' : ''}}"
+      bindtap="onToggleFavorite"
+    >
+      {{isFav ? '❤️ 已收藏' : '🤍 收藏'}}
+    </view>
+    <view class="btn btn-primary" bindtap="goOutfits">
+      查看更多搭配
+    </view>
+  </view>
+</view>
+
+<!-- 明日穿搭预览 -->
+<view class="tomorrow-card" bindtap="goTomorrow">
+  <view class="tomorrow-header">
+    <view class="tomorrow-title">明日穿搭预览</view>
+    <view class="tomorrow-weather">{{tomorrow.date}} {{tomorrow.tempMin}}°~{{tomorrow.tempMax}}°</view>
+  </view>
+  <view class="tomorrow-body">
+    <text class="tomorrow-icon">👗</text>
+    <text class="tomorrow-tip">{{tomorrow.tip}}</text>
+  </view>
+</view>
+
+<!-- ===== 个人信息弹窗 ===== -->
+<view class="modal-mask" wx:if="{{showSetupModal}}" catchtouchmove="true"></view>
+<view class="setup-modal" wx:if="{{showSetupModal}}">
+  <view class="modal-title">完善个人信息</view>
+  <view class="modal-subtitle">为了给您提供更准确的穿搭建议</view>
+  <view class="form-item">
+    <text class="label">性别</text>
+    <radio-group class="radio-group" bindchange="onGenderChange">
+      <label class="radio-label"><radio value="male" color="#8396eb" checked="{{gender === 'male'}}"/> 男生</label>
+      <label class="radio-label"><radio value="female" color="#8396eb" checked="{{gender === 'female'}}"/> 女生</label>
+    </radio-group>
+  </view>
+  <view class="form-item">
+    <text class="label">体质</text>
+    <radio-group class="body-type-group" bindchange="onBodyTypeChange">
+      <label class="body-type-item {{tempBodyTypeIndex === 0 ? 'active' : ''}}">
+        <radio value="0" checked="{{tempBodyTypeIndex === 0}}" style="display:none;" /> ❄️ 怕冷
+      </label>
+      <label class="body-type-item {{tempBodyTypeIndex === 1 ? 'active' : ''}}">
+        <radio value="1" checked="{{tempBodyTypeIndex === 1}}" style="display:none;" /> 🌤️ 正常
+      </label>
+      <label class="body-type-item {{tempBodyTypeIndex === 2 ? 'active' : ''}}">
+        <radio value="2" checked="{{tempBodyTypeIndex === 2}}" style="display:none;" /> 🔥 怕热
+      </label>
+    </radio-group>
+  </view>
+  <button class="btn btn-primary save-btn" bindtap="saveUserInfo">保存并开始</button>
+</view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "weather-card": "/components/weather-card/weather-card",
+    "outfit-item": "/components/outfit-item/outfit-item"
+  },
+  "navigationBarTitleText": "天气穿搭",
+  "navigationBarBackgroundColor": "#2b2f3a",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

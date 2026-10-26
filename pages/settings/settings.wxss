@@ -1,0 +1,104 @@
+.page-container {
+  padding: 20px 16px 40px 16px;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.setting-row:last-of-type {
+  border-bottom: none;
+}
+
+.row-label {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.row-value {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.arrow {
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.row-tip {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+/* 自定义药丸开关 */
+.custom-switch {
+  width: 50px;
+  height: 28px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.switch-on {
+  background-color: #4A90E2; 
+  justify-content: flex-end;
+}
+
+.switch-off {
+  background-color: #ccc; 
+  justify-content: flex-start;
+}
+
+.switch-handle {
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* 危险按钮样式 */
+.danger-zone {
+  margin-top: 30px;
+}
+
+.danger-btn {
+  background-color: transparent;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 14px 0;
+}
+
+.danger-btn::after {
+  border: none;
+}
